@@ -973,6 +973,8 @@ bool ARAPlanner::Search(ARASearchStateSpace_t* pSearchStateSpace, vector<int>& p
             tempStat.expands = searchexpands - prevexpands;
             tempStat.time = double(clock() - loop_time) / CLOCKS_PER_SEC;
             tempStat.cost = ((ARAState*)pSearchStateSpace->searchgoalstate->PlannerSpecificData)->g;
+            int solcost = INFINITECOST;
+            tempStat.solution = GetSearchPath(pSearchStateSpace, solcost);
             stats.push_back(tempStat);
         }
 

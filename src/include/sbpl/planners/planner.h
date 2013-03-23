@@ -138,6 +138,7 @@ public:
     int cost;
     double time;
     int expands;
+    std::vector<int> solution;
 };
 
 typedef enum
